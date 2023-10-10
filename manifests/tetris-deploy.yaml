@@ -1,0 +1,21 @@
+# tetris-deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tetris-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tetris
+  template:
+    metadata:
+      labels:
+        app: tetris-game
+    spec:
+      containers:
+        - name: tetris
+          image: jovestefanovski/tetrisgame
+          ports:
+            - containerPort: 80
