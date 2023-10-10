@@ -8,14 +8,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tetris
+      app: tetris-game
   template:
     metadata:
       labels:
         app: tetris-game
     spec:
       containers:
-        - name: tetris
+        - name: tetris-game
           image: jovestefanovski/tetrisgame
           ports:
             - containerPort: 80
